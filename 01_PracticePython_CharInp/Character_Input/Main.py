@@ -36,10 +36,10 @@ cicle = int(input("How many times you want to repeat the message?: "))
 #year = year - age
 #year = year + 100
 
-#Another way to clculate it
+#Another way to calculate it
 year = year + (100 - age)
 
-message1 = "Your name is: "+name+". Your actual age is: "+str(age)+". \n"
+message1 = "Your name is: "+name+". Your actual age is: "+ str(age)+". \n"
 message = "Hi "+name+", you'll be 100 years old in year "+ str(year) + ". \n"
 print(cicle * message)
 
