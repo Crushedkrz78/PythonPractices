@@ -14,7 +14,7 @@ Extras:
 3.- Ask the user for a number and return a list that contains only elements from the original list "a" that are smaller
     than that number given by the user.
 """
-
+print("Ejercicio 3-----------------------------------------------------------")
 #Example list
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
@@ -28,9 +28,28 @@ print("")
 print("Elementos menores a 5 de la lista a: ")
 for element in a:
     if element < 5:
-        print(str(element) + " ", end='')
+        print(str(element) + " ", end='') #Prints elements on the same line
+print ("")
 
-#
+print("Extra 1:-----------------------------------------------------------")
+#Extra 1: Making a new list of elements less than 5 from "a" list
+b = []  #New list called "b"
+for element in a:
+    if element < 5:
+        b.append(element)   #Inserts elements into the new list
+#Printing the elements contained in the "b" list
+print("Elementos menores a 5 de la list a, ahora contenidos en una nueva lista b:")
+for element in b:
+    print(str(element) + " ", end='')
+print("")
+print("Extra 2:-----------------------------------------------------------")
+#Extra 2: Asking to the user for a number
+usr = int(input("Ingresa un número: "))
+
+print("Elementos de la lista a menores al valor ingresado por el usuario: ")
+for element in a:
+    if element < usr:
+        print(str(element) + " ", end='')
 """
 Solution coded by: KriztyanPM
 Date: 10/14/2017 [14/10/2017 for Mexico]
