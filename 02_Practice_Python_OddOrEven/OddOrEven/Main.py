@@ -50,3 +50,9 @@ if result == 0:
     print("El dividendo es completamente divisible entre el divisor.")
 else:
     print("El dividendo no es divisible entre el divisor.")
+
+"""
+Solution coded by: KriztyanPM
+Date: 10/13/2017 [13/10/2017 for Mexico]
+Exercise from: http://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html
+"""
