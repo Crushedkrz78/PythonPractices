@@ -15,6 +15,23 @@ Extras
 2.- Write this in one line of Python (Don't worry if you can't figure this out at this point
     (We'll get to it soon).
 """
+#First part of the program
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+print("Elementos de la lista a: ")
+for element in a:
+    print(element)
+print("Elementos de la lista b: ")
+for element in b:
+    print(element)
+
+#Now validating common elements
+print("Elementos en común para las listas a y b")
+for element in a:
+    if element in b:
+        print(element)
+#For now this program is not completed, I'll work on it later
 
 """
 Solution coded by: KriztyanPM
