@@ -15,6 +15,7 @@ a = tuple() #Creacion de una tupla
 a = (1, "Hola", (1,2), True, -1.4) #Puede contener elementos diferentes
 a = (1,)    #Tupla con un unico elemento
 
+#Manejo de listas
 #Acceso a los datos
 print(a[0])
 
