@@ -27,10 +27,7 @@ def Check():
         if(v_usr == usr[pos]):
             if(v_psw == psw[pos]):
                 found = True
-            else:
-                pos = pos + 1
-        else:
-            pos = pos + 1
+        pos = pos + 1
     if found:
         print("Acceso permitido: \nBienvenido")
     else:
