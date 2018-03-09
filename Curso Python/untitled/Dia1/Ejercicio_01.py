@@ -26,13 +26,13 @@ ApellidoM = ""      #Apellido Materno
 Edad = 0            #Edad del usuario
 Peso = 0.0          #Peso en Kilogramos
 Estatura = 0.0        #Estatura en Metros
-CURP = ""           #Clave Única de Registro Poblacional
+#CURP = ""           #Clave Única de Registro Poblacional
 
 #Solicitud de los datos del Usuario
-#Nombre = raw_input("Ingrese su nombre (Solo el primer nombre): ")
-#ApellidoP = raw_input("Ingrese su apellido Paterno: ")
-#ApellidoM = raw_input("Ingrese su apellido Materno")
-#Edad = int(raw_input("Ingrese su edad: "))
+Nombre = raw_input("Ingrese su nombre (Solo el primer nombre): ")
+ApellidoP = raw_input("Ingrese su apellido Paterno: ")
+ApellidoM = raw_input("Ingrese su apellido Materno: ")
+Edad = int(raw_input("Ingrese su edad: "))
 Peso = float(raw_input("Ingrese su peso (Kg): "))
 Estatura = float(raw_input("Ingrese su estatura (m): "))
 #print("Para validar sus datos, ingrese su CURP: ")
@@ -45,14 +45,22 @@ IMC = Peso/(Estatura^2)
 """
 def CalcIMC(p_Peso, p_Est):
     IMC = p_Peso/(p_Est*p_Est)
-    print("Su IMC es de: "+str(IMC)+".")
+    print("Tiene un IMC de: "+str(IMC)+".")
+    print("Por lo tanto:")
     if IMC < 18:
-        print("Su peso es bajo")
+        print("--Su peso es bajo")
     else:
         if IMC >= 18 and IMC < 25:
-            print("Su peso es normal")
+            print("--Su peso es normal")
         else:
-            print("Su peso es elevado")
+            print("--Su peso es elevado")
 #Fin de la función para calcular IMC
 
+#Mostrar datos ingresados del usuario
+print("------------------------------------------------")
+print("El usuario "+Nombre+" "+ApellidoP+" "+ApellidoM)
+print("de "+str(Edad)+" años.")
+print("Peso: "+str(Peso)+" Kg")
+print("Estatura: "+str(Estatura)+" mts")
 CalcIMC(Peso,Estatura)
+print("------------------------------------------------")
