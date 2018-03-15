@@ -43,13 +43,15 @@ DNI = raw_input("DNI: ")
 def valDNI(p_DNI):
     letrasDNI = ("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E")
     #Determinar si el DNI es de ciudadano Español o Residente Extranjero
+    tempNIF = p_DNI[1:len(p_DNI)]
     NIE = ["X", "Y", "Z"]
     if p_DNI[0] == "X":
-        p_DNI[0] = 0
+        p_DNI = str(0)+tempNIF
     elif p_DNI[0] == "Y":
-        p_DNI[0] = 1
+        p_DNI = str(1) + tempNIF
     elif p_DNI[0] == "Z":
-        p_DNI[0] = 2
+        p_DNI = str(2) + tempNIF
+    #Si no hay letra X, Y o Z al inicio, el DNI pertenece a ciudadano Español
     numDNI = int(p_DNI[0:len(p_DNI)-1])
     letraDNI = p_DNI[8]
     calcLetraDNI = numDNI % 23
