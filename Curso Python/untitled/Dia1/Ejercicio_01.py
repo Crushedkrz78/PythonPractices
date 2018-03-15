@@ -29,14 +29,37 @@ Estatura = 0.0        #Estatura en Metros
 #CURP = ""           #Clave Única de Registro Poblacional
 
 #Solicitud de los datos del Usuario
+"""
 Nombre = raw_input("Ingrese su nombre (Solo el primer nombre): ")
 ApellidoP = raw_input("Ingrese su apellido Paterno: ")
 ApellidoM = raw_input("Ingrese su apellido Materno: ")
 Edad = int(raw_input("Ingrese su edad: "))
 Peso = float(raw_input("Ingrese su peso (Kg): "))
 Estatura = float(raw_input("Ingrese su estatura (m): "))
-#print("Para validar sus datos, ingrese su CURP: ")
-#CURP = raw_input("CURP: ")
+"""
+print("Para validar sus datos, ingrese su DNI: ")
+DNI = raw_input("DNI: ")
+
+def valDNI(p_DNI):
+    letrasDNI = ("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E")
+    #Determinar si el DNI es de ciudadano Español o Residente Extranjero
+    NIE = ["X", "Y", "Z"]
+    if p_DNI[0] == "X":
+        p_DNI[0] = 0
+    elif p_DNI[0] == "Y":
+        p_DNI[0] = 1
+    elif p_DNI[0] == "Z":
+        p_DNI[0] = 2
+    numDNI = int(p_DNI[0:len(p_DNI)-1])
+    letraDNI = p_DNI[8]
+    calcLetraDNI = numDNI % 23
+    if letraDNI == letrasDNI[calcLetraDNI]:
+        print("La DNI fue ingresada y validada correctamente")
+    else:
+        print("La DNI ingresada contiene un error, intente nuevamente")
+
+valDNI(DNI)
+
 
 #Cálculo del Índice de Masa Corporal
 """
@@ -55,7 +78,7 @@ def CalcIMC(p_Peso, p_Est):
         else:
             print("--Su peso es elevado")
 #Fin de la función para calcular IMC
-
+"""
 #Mostrar datos ingresados del usuario
 print("------------------------------------------------")
 print("El usuario "+Nombre+" "+ApellidoP+" "+ApellidoM)
@@ -64,3 +87,4 @@ print("Peso: "+str(Peso)+" Kg")
 print("Estatura: "+str(Estatura)+" mts")
 CalcIMC(Peso,Estatura)
 print("------------------------------------------------")
+"""
