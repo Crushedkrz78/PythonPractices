@@ -17,19 +17,41 @@ Notes:
 import random as rnd
 
 #Initialize Variables Section-----
-guess_number = rnd.randint(1,9)
-#print(guess_number)
-usr_number = int(input("Choose a number between 1 and 9: "))
-#print(" -Random Number: %s\n -User Number: %s" %(guess_number,usr_number))
+cycle_flag = True
+score_counter = 0
+fail_attempt_counter = 0
 
-#Comparing numbers Section-----
-diff = guess_number - usr_number
-#print("Absolute difference between numbers: %s" %diff)
+#Cycle that keeps game running
+while(cycle_flag):
+    guess_number = rnd.randint(1,9)
+    #print(guess_number)
 
-if diff == 0:
-    print ("---You nailed it!---")
-elif diff < 0:
-    print("---The number is too high---")
-else:
-    print("---The number is too low---")
+    usr_input = input("Choose a number between 1 and 9 or write \"exit\" to end game: \n")
+    #print(" -Random Number: %s\n -User Number: %s" %(guess_number,usr_number))
+    if usr_input == "exit":
+        cycle_flag = False
+        print("User Score: %s \nFailed attempts: %s" %(score_counter, fail_attempt_counter))
+    elif usr_input.isnumeric():
+        usr_number = int(usr_input)
 
+        #Comparing numbers Section-----
+        diff = guess_number - usr_number
+        #print("Absolute difference between numbers: %s" %diff)
+
+        if diff == 0:
+            print ("---You nailed it!---")
+            score_counter += 1
+        elif diff < 0:
+            print("---The number is too high---")
+            fail_attempt_counter += 1
+        else:
+            print("---The number is too low---")
+            fail_attempt_counter += 1
+    else:
+        print("Please, insert a number bigger that 0 or insert \"exit\" to continue\n")
+
+"""
+Coded by: KriztyanPM
+Date: 08/14/2018 [14/08/2018 in Mexico]
+Exercise from: http://www.practicepython.org/exercise/2014/04/02/09-guessing-game-one.html
+"""
