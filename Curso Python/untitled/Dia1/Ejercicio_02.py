@@ -34,4 +34,24 @@ def Check():
         print("Usuario o contraseña no válidos, intente nuevamente")
         Check()
 
-Check()
+
+
+""" Modifications for Exercise 02 v2, now using a dictionary """
+#Dictionary definition Key -> Usr   Data -> Psw
+access = {"root":"0000","Cris": "Cris078"}
+
+#New validationn function
+def check2():
+    v_usr = raw_input("Usuario: ")
+    if v_usr in access.keys():
+        v_psw = raw_input("Contraseña: ")
+        if access[v_usr] == v_psw:
+            print("Access granted")
+        else:
+            print("Incorrect Password")
+            check2()
+    else:
+        print("User not found")
+        check2()
+
+check2()
